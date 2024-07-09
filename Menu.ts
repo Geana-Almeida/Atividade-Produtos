@@ -127,9 +127,15 @@ export function main(){
                 console.log("Digite o id do produto")
                 id = readlinesync.questionInt("");
 
-                produto.deletar(id);
-                break;  
+                if(produto.buscarId(id) !== null){
+                    produto.deletar(id);
+                }
+
+                else{
+                    console.log("Id não existe.")
+                }
                 
+                break;
             default:
                 console.log("Opção inválida. Digite novamente a opção.");
         }
