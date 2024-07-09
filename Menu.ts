@@ -3,7 +3,6 @@ import { Medicamento } from "./src/model/Medicamento";
 import { Cosmetico } from "./src/model/Cosmetico";
 import { colors } from "./src/util/Colors";
 import { ProdutosController } from "./src/controller/ProdutosController";
-import { Produto } from "./src/model/Produto";
 
 
 export function main(){
@@ -12,6 +11,7 @@ export function main(){
     const tipoProduto = ['Medicamento', 'Cosmetico'];
 
     const produto: ProdutosController = new ProdutosController();
+    
 
     while(true){
         console.log(colors.bg.black, colors.fg.yellowstrong);
@@ -118,8 +118,9 @@ export function main(){
                                 new Cosmetico(id, nome, tipo, preco, fragancia)
                             )
                             break;
-                    }
+                    }   
                 }
+                break;
 
             case 5:
                 console.log("\n\nConsultar Id do produto");
@@ -127,7 +128,10 @@ export function main(){
                 id = readlinesync.questionInt("");
 
                 produto.deletar(id);
-                break;         
+                break;  
+                
+            default:
+                console.log("Opção inválida. Digite novamente a opção.");
         }
     
     }   

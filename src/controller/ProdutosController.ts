@@ -1,4 +1,4 @@
-import { Medicamento } from "../model/Medicamento";
+
 import { Produto } from "../model/Produto";
 import { ProdutoRepository } from "../repository/ProdutoRepository";
 
@@ -29,7 +29,7 @@ export class ProdutosController implements ProdutoRepository{
         }
     }
     atualizar(novoproduto: Produto): void {
-       this.listaProdutos.forEach((produto) => {
+       this.listaProdutos.forEach(function teste(produto){
         if(novoproduto.id === produto.id){
             produto.nome = novoproduto.nome;
             produto.preco = novoproduto.preco;
